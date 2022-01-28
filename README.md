@@ -44,6 +44,9 @@
       curr, prev = head, None
       while curr:       
 		    curr.next, prev, curr = prev, curr, curr.next
+	
+      # Return the head of reversed linked list
+      return prev
       ```
       or 
     * ```python
