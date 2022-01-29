@@ -28,7 +28,7 @@
                   current_node = current_node.next
 
           return dummy_head.next
-    * It is enlightened to create a dummy node prefix to the given head node** and loop in that way.
+    * It is enlightened to create a dummy node prefix to the given head node and loop in that way.
 
 2. Given the `head` of the linked list and get the middle node using fast and slow pointers. Remember the slow point always stops at index `n // 2`, (where n is the number of nodes in the linked list and index starts from 0)
     * ```python
