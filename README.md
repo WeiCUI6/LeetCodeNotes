@@ -1,5 +1,5 @@
 # LeetCodeNotes
-#### Description: Summary of what I have gained while practicing LeetCode. I would suggest memorize what I wrote down.
+#### Description: Summary of what I have gained while practicing LeetCode questions. I would suggest memorize what I wrote down here.
 
 ## LinkedList 
 **Timeline (Jan. 24 - Jan. 28)**
