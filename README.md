@@ -30,7 +30,7 @@
           return dummy_head.next
     * It is enlightened to create a dummy node prefix to the given head node and loop in that way.
 
-2. Given the `head` of the linked list and get the middle node using fast and slow pointers. Remember the slow point always stops at index `n // 2`, where n is the number of nodes in the linked list and index starts from 0.
+2. Given the `head` of the linked list and get the middle node using fast and slow pointers. Remember the slow point always stops at index `n // 2`, where `n` is the number of nodes in the linked list and index starts from `0`.
     * ```python
       # The head node is given as input
       slow, fast = head, head
@@ -39,7 +39,7 @@
 		  fast = fast.next.next
 		  slow = slow.next
       ```
-    * Furthermore, we can summarize this idea into this trick. If `endNode` is `k` positions behind a certain node called `currentNode`, when `currentNode` reaches the end            (None) of linked list, i.e, at the `n-th` node, the `endNode` would be at the `(n - k)-th` node. From the coding perspective, if we want to get the `k-th` node from the end      of linked list (linked list is 1-indexed), then:
+    * Furthermore, we can summarize this idea into this trick. If `endNode` is `k` positions behind a certain node called `currentNode`, when `currentNode` reaches the end            (None) of linked list, i.e, at the `n-th` node, the `endNode` would be at the `(n - k)-th` node. From the coding perspective, if we want to get the `k-th` node from the end      of linked list (linked list is `1-indexed`), then:
       ```python
       kth_node_from_end = None
       index = 1
