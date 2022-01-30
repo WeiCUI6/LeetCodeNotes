@@ -39,7 +39,7 @@
 		  fast = fast.next.next
 		  slow = slow.next
       ```
-    * Furthermore, we can summarize this idea into this trick. If `endNode` is `k` positions behind a certain node called `currentNode`, when `currentNode` reaches the end of         linked list, i.e, at the `n-th` node, the `endNode` would be at the `(n - k)-th` node.
+    * Furthermore, we can summarize this idea into this trick. If `endNode` is `k` positions behind a certain node called `currentNode`, when `currentNode` reaches the end of         linked list, i.e, at the `n-th` node, the `endNode` would be at the `(n - k)-th` node (index starts from 1).
 
 3. Reverse linked list given the `head` node.
     * ```python
