@@ -55,8 +55,8 @@
           curr = curr.next
           index += 1
       ```
-       * It is very important to note here that in the while loop, we should check whether the `kth_node_from_end` is None before assigning it to `head`. Since when the                  condition `index == k` satisfies, we don't want to assign the `kth_node_from_end` to `head` and then also move it to the next node.
-       * It is wrong to write the condition for while loop as: `while curr.next:` as it will always fail (i.e. AttributeError: `NoneType` object has no attribute `val`) when `k          = n`, where `n` is the number of nodes in the linked list.
+       * It is very important to note here that in the while loop, we should check whether the `kth_node_from_end` is None before assigning it to `head`. Since when the                  condition `index == k` satisfies, we don't want to assign the `kth_node_from_end` to `head` and then also move it to the next node in that iteration.
+       * It is wrong to write the condition for while loop as `while curr.next:` as it will always fail (i.e. AttributeError: `NoneType` object has no attribute `val`) when `k`          has the same value as `n`, where `n` is the number of nodes in the linked list.
 
 3. Reverse linked list given the `head` node.
     * ```python
