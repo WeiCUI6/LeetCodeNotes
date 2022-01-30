@@ -62,9 +62,9 @@
               prev = curr
           return prev
       ```
-4. Sometimes do check whether we need to swap two actual nodes or we (can) just need to swap the `val` field within nodes.
+4. Sometimes do check whether we need to swap two actual nodes or we (can) just (need to) swap the `val` field within nodes.
     <p align="center">
-        <img src="imgs/L1721.png" width="48%"/>
+        <img src="imgs/L1721.png" width="70%"/>
     </p>
     
 100. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting.
