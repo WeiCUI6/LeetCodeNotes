@@ -20,15 +20,24 @@
           dummy_head = ListNode(-1)
           dummy_head.next = head
 
-          current_node = dummy_head
-          while current_node.next != None:
-              if current_node.next.val == val:
-                  current_node.next = current_node.next.next
+          curr = dummy_head
+          while curr.next:
+              if curr.next.val == val:
+                  curr.next = curr.next.next
               else:
-                  current_node = current_node.next
+                  curr = curr.next
 
           return dummy_head.next
-    * It is enlightened to create a dummy node prefix to the given head node and loop in that way.
+    * It is enlightened to create a dummy node prefix to the given head node and loop in that way to remove nodes.
+    * It is also useful to use dummy node to get a pointer pointing to the last node of the linked list:
+      * ```python
+        dummy_head = ListNode(-1)
+        dummy_head.next = head
+
+        curr = dummy_head
+        while curr.next:
+            curr = curr.next
+        ```
 
 2. Given the `head` of the linked list and get the middle node using fast and slow pointers. Remember the slow point always stops at index `n // 2`, where `n` is the number of nodes in the linked list and index starts from `0`.
     * ```python
@@ -88,4 +97,4 @@
     
 100. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting.
      * Easy: L1474, L705, L706, L716
-     * Medium: L1265 (Important Follow-up Questions)
+     * Medium: L1265 (Important Follow-up Questions), L369
