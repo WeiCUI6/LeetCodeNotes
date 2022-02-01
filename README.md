@@ -97,4 +97,4 @@
     
 100. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting.
      * Easy: L1474, L705, L706, L716
-     * Medium: L1265 (Important Follow-up Questions), L369, L1019, L382()
+     * Medium: L1265 (Important Follow-up Questions), L369, L1019, L382([Reservoir Sampling](resources/reservoir_sampling.pdf))
