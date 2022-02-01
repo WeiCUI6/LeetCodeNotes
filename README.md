@@ -28,18 +28,17 @@
                   curr = curr.next
 
           return dummy_head.next
-    * It is enlightened to create a dummy node prefix to the given head node and loop in that way to remove nodes.
-    * It is also useful to use dummy node to get a pointer pointing to the last node of the linked list:
-      * ```python
-        dummy_head = ListNode(-1)
-        dummy_head.next = head
+      ```
+      * It is enlightened to create a dummy node prefix to the given head node and loop in that way to remove nodes.
 
-        curr = dummy_head
+2. Given the `head` of a linked list and get a pointer pointing to the last node.
+      * ```python
+        curr = head
         while curr.next:
             curr = curr.next
         ```
-
-2. Given the `head` of the linked list and get the middle node using fast and slow pointers. Remember the slow point always stops at index `n // 2`, where `n` is the number of nodes in the linked list and index starts from `0`.
+	
+3. Given the `head` of the linked list and get the middle node using fast and slow pointers. Remember the slow point always stops at index `n // 2`, where `n` is the number of nodes in the linked list and index starts from `0`.
     * ```python
       # The head node is given as input
       slow, fast = head, head
@@ -67,7 +66,7 @@
        * It is very important to note here that in the while loop, we should check whether the `kth_node_from_end` is None before assigning it to `head`. Since when the                  condition `index == k` satisfies, we don't want to assign the `kth_node_from_end` to `head` and then also move it to the next node in that iteration.
        * It is wrong to write the condition for while loop as `while curr.next:` as it will always fail (i.e. AttributeError: `NoneType` object has no attribute `val`) when `k`          has the same value as `n`, where `n` is the number of nodes in the linked list.
 
-3. Reverse linked list given the `head` node.
+4. Reverse linked list given the `head` node.
     * ```python
       curr, prev = head, None
       while curr:       
@@ -90,7 +89,7 @@
               prev = curr
           return prev
       ```
-4. Sometimes do check whether we need to swap two actual nodes or we (can) just (need to) swap the `val` field within nodes.
+5. Sometimes do check whether we need to swap two actual nodes or we (can) just (need to) swap the `val` field within nodes.
     <p align="center">
         <img src="imgs/L1721.png" width="70%"/>
     </p>
