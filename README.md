@@ -96,5 +96,5 @@
     </p>
     
 100. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting.
-     * Easy: L1474, L705, L706, L716
-     * Medium: L1265 (Important Follow-up Questions), L369, L1019, L382([Reservoir Sampling](https://leetcode.com/problems/linked-list-random-node/discuss/85659/Brief-explanation-for-Reservoir-Sampling), [Mathematical Proof](resources/reservoir_sampling.pdf))
+     * Easy: [L1474](https://leetcode.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/), [L705](https://leetcode.com/problems/design-hashset/), [L706](https://leetcode.com/problems/design-hashmap/), [L716](https://leetcode.com/problems/max-stack/)
+     * Medium: [L1265](https://leetcode.com/problems/print-immutable-linked-list-in-reverse/) (Important Follow-up Questions), [L369](https://leetcode.com/problems/plus-one-linked-list/), [L1019](https://leetcode.com/problems/next-greater-node-in-linked-list/), [L382](https://leetcode.com/problems/linked-list-random-node/)([Reservoir Sampling](https://leetcode.com/problems/linked-list-random-node/discuss/85659/Brief-explanation-for-Reservoir-Sampling), [Mathematical Proof](resources/reservoir_sampling.pdf))
