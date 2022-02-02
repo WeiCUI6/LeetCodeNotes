@@ -93,7 +93,49 @@
     <p align="center">
         <img src="imgs/L1721.png" width="70%"/>
     </p>
-    
+
+6. [L445](https://leetcode.com/problems/add-two-numbers-ii/): You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself. See constraints and follow-up questions in the link.
+    * ```python
+      # Definition for singly-linked list.
+      # class ListNode:
+      #     def __init__(self, val=0, next=None):
+      #         self.val = val
+      #         self.next = next
+      class Solution:
+          def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+              st1 = []
+              st2 = []
+        
+              while l1:
+                  st1.append(l1.val)
+                  l1 = l1.next
+            
+              while l2:
+                  st2.append(l2.val)
+                  l2 = l2.next
+            
+			carry = 0
+			res_head = None
+
+			while st1 or st2:
+			    x1 = st1.pop() if st1 else 0
+			    x2 = st2.pop() if st2 else 0
+
+			    val = (carry + x1 + x2) % 10
+			    carry = (carry + x1 + x2) // 10
+
+			    curr = ListNode(val)
+			    curr.next = res_head
+			    res_head = curr
+
+			if carry:
+			    curr = ListNode(carry)
+			    curr.next = res_head
+			    res_head = curr
+
+			return res_head
+      ```
+
 100. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting.
      * Easy: [L1474](https://leetcode.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/), [L705](https://leetcode.com/problems/design-hashset/), [L706](https://leetcode.com/problems/design-hashmap/), [L716](https://leetcode.com/problems/max-stack/)
      * Medium: [L1265](https://leetcode.com/problems/print-immutable-linked-list-in-reverse/) (Important Follow-up Questions), [L369](https://leetcode.com/problems/plus-one-linked-list/), [L1019](https://leetcode.com/problems/next-greater-node-in-linked-list/), [L382](https://leetcode.com/problems/linked-list-random-node/)([Reservoir Sampling](https://leetcode.com/problems/linked-list-random-node/discuss/85659/Brief-explanation-for-Reservoir-Sampling), [Mathematical Proof](resources/reservoir_sampling.pdf)), [L430](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/), [L445](https://leetcode.com/problems/add-two-numbers-ii/)(Pay attention to details in implementation)
