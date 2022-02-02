@@ -139,6 +139,8 @@
 
 			return res_head
       ```
+      * Remember the part where we add two numbers digit by digit and maintain a `carry` variable from the least significant digit.
+      * We use two `stacks` to solve it without reversing the input lists.
 
 100. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting.
      * Easy: [L1474](https://leetcode.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/), [L705](https://leetcode.com/problems/design-hashset/), [L706](https://leetcode.com/problems/design-hashmap/), [L716](https://leetcode.com/problems/max-stack/)
