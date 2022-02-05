@@ -142,6 +142,53 @@
       * Remember the part where we add two numbers digit by digit and maintain a `carry` variable from the least significant digit.
       * We use two `stacks` to solve it without reversing the input lists.
 
+7. [L114](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/): Given the `root` of a binary tree, flatten the tree into a "linked list":
+    * The "linked list" should use the same `TreeNode` class where the right child pointer points to the next node in the list and the left child pointer is always `null`.
+    * The "linked list" should be in the same order as a pre-order traversal of the binary tree.
+     <p align="center">
+        <img src="imgs/L114.png" width="40%"/>
+     </p>
+    
+    * ```python
+      # Definition for a binary tree node.
+      # class TreeNode:
+      #     def __init__(self, val=0, left=None, right=None):
+      #         self.val = val
+      #         self.left = left
+      #         self.right = right
+      class Solution:
+          def flatten(self, root: Optional[TreeNode]) -> None:
+              """
+              Do not return anything, modify root in-place instead.
+              """
+              head, prev = None, None
+        
+              def preOrder(root):
+                  nonlocal head, prev
+            
+                  if not root:
+                      return
+            
+                  root_right = root.right
+            
+                  if not head:
+                      head, prev = root, root
+                  else:
+                      prev.right = root
+                      prev.left = None
+                      prev = root
+            
+                  preOrder(root.left)
+                  preOrder(root_right)
+        
+              if not root:
+                  return
+        
+              preOrder(root)
+              return head
+      ```
+      * The key insight here is that I should understand/know clearly what `preOrder` is trying to do (Think of it as an API or a black box even if I haven't implemented it yet) when implementing this type of recursion compared with CSC148 recursion problems (The ones usually have a return value(s) or just a simple print statement in tree traversal problems). Therefore, what `preOrder` does is that it flattens input binary tree nodes into a "linked list" and link its head to the current root. And since we want to flatten the binary tree into a "linked list" in the same order as a pre-order traversal of the binary tree. So, in our case, when we call `preOrder(root.left)` it will flatten the left subtree of current `root` and then link its head to the `right` of current `root`. However, this will change the `root.right` before calling `preOrder(root.right)`. Thus, the line `root_right = root.right` to save the right subtree of the current `root` before we actually try to do something within `preOrder` is very important and it is easy to make mistakes if you don't know the essence of this recursion function.
+
 100. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting.
      * Easy: [L1474](https://leetcode.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/), [L705](https://leetcode.com/problems/design-hashset/), [L706](https://leetcode.com/problems/design-hashmap/), [L716](https://leetcode.com/problems/max-stack/)
      * Medium: [L1265](https://leetcode.com/problems/print-immutable-linked-list-in-reverse/) (Important Follow-up Questions), [L369](https://leetcode.com/problems/plus-one-linked-list/), [L1019](https://leetcode.com/problems/next-greater-node-in-linked-list/), [L382](https://leetcode.com/problems/linked-list-random-node/)([Reservoir Sampling](https://leetcode.com/problems/linked-list-random-node/discuss/85659/Brief-explanation-for-Reservoir-Sampling), [Mathematical Proof](resources/reservoir_sampling.pdf)), [L430](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/), [L445](https://leetcode.com/problems/add-two-numbers-ii/)(Pay attention to details in implementation)
