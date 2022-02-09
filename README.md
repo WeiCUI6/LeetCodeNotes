@@ -204,7 +204,8 @@
         
                return root
        ```
-       * place holder
+       * Converting the linked list to height balanced BST can be solved by **finding the mid point of the linked list and then recurse on the first half and second half.**
+       * Once we have the middle node of the linked list, we disconnect the portion of the list to the left of the middle node. The way we do this is by setting `fast = head.next.next` and adding a base case accounting for this line. For disconnecting the left portion we simply do `slow.next = None` since `slow` now points to the node just before the middle node.
 
      * ```python
        class Solution:
@@ -245,7 +246,8 @@
                root = formBST(1, size) # goes same with root = formBST(0, size - 1)
                return root
        ```
-         * place holder
+         * `start` and `end` parameters represent the starting and ending indices for the linked list. The key insight here is that function `formBST(start, end)` will move the `head` pointer in the linked list to point to the middle node (which becomes the root) of the portion of linked list (indicated by indices `start` and `end`), convert the portion of linked list to a height balanced BST, and then return the root node. So, we simply use the current value pointed to by `head` as the root node and progress the `head` node by once i.e. `head = head.next`. 
+         * Elements processed in the inorder traversal on a binary search tree turn out to be sorted in ascending order. The second approach listed here make use of this idea to formulate the construction of a binary search tree. The reason we are able to use this idea in this problem is because we are given a **sorted** linked list initially.
 
 100. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting.
      * Easy: [L1474](https://leetcode.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/), [L705](https://leetcode.com/problems/design-hashset/), [L706](https://leetcode.com/problems/design-hashmap/), [L716](https://leetcode.com/problems/max-stack/)
