@@ -1,7 +1,7 @@
 # LeetCodeNotes
 #### Description: Summary of what I have gained while practicing LeetCode questions. I would suggest memorize what I wrote down here.
 
-## LinkedList 
+## Linked List 
 **Timeline (Jan. 24 - Feb. 15)**
 1. Given the `head` of a linked list and an integer `val`, remove all the nodes of the linked list that has `Node.val == val`, and return the new `head` (L203).
     <p align="center">
