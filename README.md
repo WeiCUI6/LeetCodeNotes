@@ -12,22 +12,22 @@
       class Solution:
           def removeElements(self, head, val):
               """
-          :type head: ListNode
-          :type val: int
-          :rtype: ListNode
-          """
+              :type head: ListNode
+              :type val: int
+              :rtype: ListNode
+              """
 
-          dummy_head = ListNode(-1)
-          dummy_head.next = head
+              dummy_head = ListNode(-1)
+              dummy_head.next = head
 
-          curr = dummy_head
-          while curr.next:
-              if curr.next.val == val:
-                  curr.next = curr.next.next
-              else:
-                  curr = curr.next
+              curr = dummy_head
+              while curr.next:
+                  if curr.next.val == val:
+                      curr.next = curr.next.next
+                  else:
+                      curr = curr.next
 
-          return dummy_head.next
+              return dummy_head.next
       ```
       * It is enlightened to create a dummy node prefix to the given head node and loop in that way to remove nodes.
 
@@ -70,7 +70,7 @@
     * ```python
       curr, prev = head, None
       while curr:       
-		    curr.next, prev, curr = prev, curr, curr.next
+		  curr.next, prev, curr = prev, curr, curr.next
 	
       # Return the head of reversed linked list
       return prev
@@ -78,16 +78,14 @@
       or 
     * ```python
       class Solution:
-      # @param {ListNode} head
-      # @return {ListNode}
-      def reverseList(self, head):
-          prev = None
-          while head:
-              curr = head
-              head = head.next
-              curr.next = prev
-              prev = curr
-          return prev
+          def reverseList(self, head):
+              prev = None
+              while head:
+                  curr = head
+                  head = head.next
+                  curr.next = prev
+                  prev = curr
+              return prev
       ```
 5. Sometimes do check whether we need to swap two actual nodes or we (can) just (need to) swap the `val` field within nodes.
     <p align="center">
