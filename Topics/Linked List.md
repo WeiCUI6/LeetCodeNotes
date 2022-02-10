@@ -5,7 +5,7 @@
 **Timeline (Jan. 24 - Feb. 15)**
 1. Given the `head` of a linked list and an integer `val`, remove all the nodes of the linked list that has `Node.val == val`, and return the new `head` (L203).
     <p align="center">
-        <img src="imgs/L203.png" width="38%"/>
+        <img src="../imgs/L203.png" width="38%"/>
     </p>
     
     * ```python
@@ -89,12 +89,12 @@
       ```
 5. Sometimes do check whether we need to swap two actual nodes or we (can) just (need to) swap the `val` field within nodes.
     <p align="center">
-        <img src="imgs/L1721.png" width="55%"/>
+        <img src="../imgs/L1721.png" width="55%"/>
     </p>
 
 6. [L445](https://leetcode.com/problems/add-two-numbers-ii/): You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself. See constraints and follow-up questions in the link.
     <p align="center">
-        <img src="imgs/L445.png" width="38%"/>
+        <img src="../imgs/L445.png" width="38%"/>
     </p>
     
     * ```python
@@ -139,7 +139,7 @@
     * The "linked list" should use the same `TreeNode` class where the right child pointer points to the next node in the list and the left child pointer is always `null`.
     * The "linked list" should be in the same order as a pre-order traversal of the binary tree.
      <p align="center">
-        <img src="imgs/L114.png" width="40%"/>
+        <img src="../imgs/L114.png" width="40%"/>
      </p>
     
     * ```python
@@ -178,7 +178,7 @@
 
 8. [L109](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/): Given the `head` of a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST. For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
      <p align="center">
-        <img src="imgs/L109.png" width="38%"/>
+        <img src="../imgs/L109.png" width="38%"/>
      </p>
      
      * ```python
