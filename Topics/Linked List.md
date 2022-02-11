@@ -253,7 +253,7 @@
   * In the top-down solution, space complexity is `O(logn)`, where `n` is the number of nodes in linked list. Since the problem is recursive, we need additional space to store the recursive call stack. The maximum depth of the recursion tree is `logn`. Note that we need to use the fast and slow pointers method to find the node just before the middle node. Therefore, we need to disconnect the portion of the list to the left of the middle node by setting `fast = head.next.next` and adding a base case `if not head.next: return head` accounting for it. For disconnecting the left portion we simply do `slow.next = None`.
   * In the bottom-up solution, space complexity is `O(1)`. [Bottom-up Solution in Python](https://leetcode.com/submissions/detail/638306894/) or [Bottom-up Solution in Java (Discussion)](https://leetcode.com/problems/sort-list/discuss/46712/Bottom-to-up(not-recurring)-with-o(1)-space-complextity-and-o(nlgn)-time-complextity). And for this solution, I'd suggest understanding the idea at least and remembering the code since you are not likely to come up with an elegant, bug-free answer for the follow-up question (i.e. you can only use constant extra space to solve it and this indicates the bottom-up approach) in the real interview with pressure.
 
-10. When using `head` and `tail` pointers to manipulate (double) linked list and removing some nodes from both front and rear of the (double) linked list, we should always remember to check whether 
+10. When using `head` and `tail` pointers to manipulate (double) linked list and removing some nodes from both front and rear of the (double) linked list, we should always remember to check below edge cases: 
     * ```python 
       if not self.head: 
           self.tail = self.head    
