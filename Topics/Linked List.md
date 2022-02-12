@@ -261,6 +261,31 @@
           self.head = self.tail    
       ```
 
+11. [L147](https://leetcode.com/problems/insertion-sort-list/): Given the `head` of a singly linked list, sort the list using insertion sort, and return the sorted list's head. Below is the insertion sort approach on linked list, I'd suggest remembering it.
+    * ```python
+      class Solution:
+          def insertionSortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+              dummy_head = ListNode(-1)
+        
+              prev = dummy_head
+              curr = head   # the current processing node will be inserted
+              while curr:
+                  next_node = curr.next   # save the next node as we will modify the curr.next pointer later
+		  
+                  # find the right place to insert the node
+                  while prev.next and prev.next.val < curr.val:
+                      prev = prev.next
+                
+	              # insert between pre and pre.next
+                  curr.next = prev.next
+                  prev.next = curr
+                  prev = dummy_head
+                  curr = next_node
+            
+              return dummy_head.next
+      ```
+        * After creating a dummy node prefix to the original `head` node and using this `while prev.next and prev.next.val < curr.val: prev = prev.next` while loop, we can find the right place to insert a node and, at the same time, the corner cases for inserting both at the front and the rear of the linked list are handled.
+
 100. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting.
    * **Easy**: [L1474](https://leetcode.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/), [L705](https://leetcode.com/problems/design-hashset/), [L706](https://leetcode.com/problems/design-hashmap/), [L716](https://leetcode.com/problems/max-stack/)
    * **Medium**: [L1265](https://leetcode.com/problems/print-immutable-linked-list-in-reverse/) (Important Follow-up Questions), [L369](https://leetcode.com/problems/plus-one-linked-list/), [L1019](https://leetcode.com/problems/next-greater-node-in-linked-list/), [L382](https://leetcode.com/problems/linked-list-random-node/)([Reservoir Sampling](https://leetcode.com/problems/linked-list-random-node/discuss/85659/Brief-explanation-for-Reservoir-Sampling), [Mathematical Proof](resources/reservoir_sampling.pdf)), [L430](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/), [L445](https://leetcode.com/problems/add-two-numbers-ii/) (Pay attention to details in implementation), [L114](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/), [L116](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/), [L1670](https://leetcode.com/problems/design-front-middle-back-queue/) (Use 2 double-ended queues (`collections.deque` in python): one for the first half and one for the second half. Maintain after each operation to make sure the `len(first)` is either `len(second) - 1` or `len(second)`. When calling `popMiddle()`, if `(len(first) + len(second)) % 2 == 1`, then `return second.popleft()` else `return first.pop()`), [L109](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/), [L148](https://leetcode.com/problems/sort-list/) (Just understand and remember the bottom-up solution (idea) and pray you can come up with a bug-free answer in the interview : ) ), [L2074](https://leetcode.com/problems/reverse-nodes-in-even-length-groups/) (Lots of implementation details)
