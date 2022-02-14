@@ -84,6 +84,33 @@
                   prev = curr
               return prev
       ```
+    * [L92](https://leetcode.com/problems/reverse-linked-list-ii/): Given the `head` of a singly linked list and two integers `left` and `right` where `left <= right`, reverse the nodes of the list from position `left` to position `right`, and return the reversed list.
+      * ```python
+        class Solution:
+            def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+                if left == right:
+                    return head
+        
+                dummy_head = ListNode(-1)
+                dummy_head.next = head
+        
+                prev = dummy_head
+                for i in range(left - 1):
+                    prev = prev.next
+            
+                start = prev.next
+                then = start.next
+        
+                for i in range(right - left):
+                    start.next = then.next
+                    then.next = prev.next
+                    prev.next = then
+                    then = start.next
+            
+                return dummy_head.next
+        ```
+	    * To clarify, all you're doing is inserting `then` between `prev` and `prev.next`. You keep moving `then` forward by 1 until you reach the difference, `right - left`, and you keep making `start.next` point to `then.next` to ensure it's always pointing to the tail part of the list.
+
 5. Sometimes do check whether we need to swap two actual nodes or we (can) just (need to) swap the `val` field within nodes.
     <p align="center">
         <img src="../imgs/L1721.png" width="55%"/>
