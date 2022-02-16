@@ -61,7 +61,7 @@
           index += 1
       ```
        * It is very important to note here that in the while loop, we should check whether the `kth_node_from_end` is None before assigning it to `head`. Since when the                  condition `index == k` satisfies, we don't want to assign the `kth_node_from_end` to `head` and then also move it to the next node in that iteration.
-       * Memorize the template and note the while loop condition is `while curr:`.
+       * Memorize the template and note the while loop condition is `while curr:`. Some related problems: [L19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/).
        * It is wrong to write the condition for while loop as `while curr.next:` as it will always fail (i.e. AttributeError: `NoneType` object has no attribute `val`) when `k`          has the same value as `n`, where `n` is the number of nodes in the linked list.
 
 4. Reverse linked list given the `head` node.
