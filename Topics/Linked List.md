@@ -1,5 +1,5 @@
 # Linked List 
-**Timeline (Jan. 24 - Feb. 15)**
+**Timeline (Jan. 24 - Feb. 23)**
 1. Given the `head` of a linked list and an integer `val`, remove all the nodes of the linked list that has `Node.val == val`, and return the new `head` (L203).
     <p align="center">
         <img src="../imgs/L203.png" width="38%"/>
