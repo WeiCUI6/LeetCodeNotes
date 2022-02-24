@@ -9,3 +9,5 @@
     <p align="center">
         <img src="../imgs/tree_traversal.png" width="43%"/>
     </p>
+
+2. [Master Theorem](../resources/master_theorem.pdf) for calculating the time complexity for recursion problems.
