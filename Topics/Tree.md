@@ -11,3 +11,6 @@
     </p>
 
 2. [Master Theorem](../resources/master_theorem.pdf) for calculating the time complexity for recursion problems.
+
+3. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting:
+  * **Easy**: [L1022](https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/)
