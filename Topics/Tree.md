@@ -24,7 +24,7 @@
     * The **diameter** of a tree is the length of the longest path between any two nodes in a tree. 
       * [L543](https://leetcode.com/problems/diameter-of-binary-tree/): For every node, `diameter = left_tree_height + right_tree_height + 2`.
  
-4. Binary Tree iterative traversal summary:
+4. Binary tree iterative traversal summary:
   
     <p align="center">
         <img src="../imgs/tree_traversal_summary.png" width="43%"/>
