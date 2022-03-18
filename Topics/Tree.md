@@ -102,7 +102,89 @@
                       st.append(node.right)
                 
               return res[::-1]
+      ```
+              
+5. [L654](https://leetcode.com/problems/maximum-binary-tree/): Linear solution with a stack to construct the maximum binary tree:
+   ```python
+   class Solution:
+       def constructMaximumBinaryTree(self, nums: List[int]) -> Optional[TreeNode]:
+           if not nums:
+               return
+        
+           st = []
+           last_pop = None
+        
+           for num in nums:
+               node = TreeNode(num)
+            
+               while st and st[-1].val < num:
+                   last_pop = st.pop()
+                
+               if st:
+                   st[-1].right = node
+            
+               if last_pop:
+                   node.left = last_pop
+                
+               st.append(node)
+               last_pop = None
+            
+           return st[0]
+    ```
+           
+6. [L1008](https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/): Given an array of integers `preorder`, which represents the preorder traversal of a BST (i.e., binary search tree), construct the tree and return its root:
+  * Iterative Solution:
+    ```python
+    class Solution:
+        def bstFromPreorder(self, preorder: List[int]) -> Optional[TreeNode]:
+            root = TreeNode(preorder[0])
+            st = [root]
+        
+            for num in preorder[1:]:
+                last_pop = None
+                node = TreeNode(num)
+            
+                if num < st[-1].val:
+                    st[-1].left = node 
+                else:
+                    while st and st[-1].val < num:
+                        last_pop = st.pop()
+                    
+                    last_pop.right = node
+                
+                st.append(node)
+            
+            return root
+    ```
 
-5. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting:
+  * Recursive Solution:
+    ```python
+    class Solution:
+        def bstFromPreorder(self, preorder: List[int]) -> Optional[TreeNode]:
+            idx = 0
+            n = len(preorder)
+        
+            def helper(l, h):
+                nonlocal idx, n
+            
+                if idx == n:
+                    return
+            
+                val = preorder[idx]
+                if val < l or val > h:
+                    return
+            
+                idx += 1
+                root = TreeNode(val)
+                root.left = helper(l, val)
+                root.right = helper(val, h)
+            
+                return root
+        
+            return helper(float('-inf'), float('inf'))
+    ```
+   
+
+7. Some problems I didn't come up with a good idea when I first try to solve them. Maybe worth revisiting:
   * **Easy**: [L1022](https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/), [L235](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) (In BST, the lowest common ancestor (LCA) of given input `p` and `q` is the split node which has the property: `p.val <= node.val <= q.val` or `q.val <= node.val <= p.val`). [L108](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/), [L993](https://leetcode.com/problems/cousins-in-binary-tree/), [L543](https://leetcode.com/problems/diameter-of-binary-tree/), [L703](https://leetcode.com/problems/kth-largest-element-in-a-stream/), [L101](https://leetcode.com/problems/symmetric-tree/), [L501](https://leetcode.com/problems/find-mode-in-binary-search-tree/)
   * **Medium**: [L236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/), [L654](https://leetcode.com/problems/maximum-binary-tree/) ([Linear Time Construction](https://leetcode.com/problems/maximum-binary-tree/discuss/258364/Python-O(n)-solution-with-explanation.), [Further Topics: RMQ, LCA, and LA](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/lecture-videos/session-15-static-trees/))
