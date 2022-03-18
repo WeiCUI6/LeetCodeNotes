@@ -104,7 +104,7 @@
               return res[::-1]
       ```
               
-5. [L654](https://leetcode.com/problems/maximum-binary-tree/): Linear solution with a stack to construct the maximum binary tree:
+5. [L654](https://leetcode.com/problems/maximum-binary-tree/) Linear time solution with a stack to construct the maximum binary tree:
    ```python
    class Solution:
        def constructMaximumBinaryTree(self, nums: List[int]) -> Optional[TreeNode]:
@@ -132,8 +132,8 @@
            return st[0]
     ```
            
-6. [L1008](https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/): Given an array of integers `preorder`, which represents the preorder traversal of a BST (i.e., binary search tree), construct the tree and return its root:
-  * Iterative Solution:
+6. [L1008](https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/) Given an array of integers `preorder`, which represents the preorder traversal of a BST (i.e., binary search tree), construct the tree and return its root:
+  * Iterative solution:
     ```python
     class Solution:
         def bstFromPreorder(self, preorder: List[int]) -> Optional[TreeNode]:
@@ -157,7 +157,7 @@
             return root
     ```
 
-  * Recursive Solution:
+  * Recursive solution:
     ```python
     class Solution:
         def bstFromPreorder(self, preorder: List[int]) -> Optional[TreeNode]:
