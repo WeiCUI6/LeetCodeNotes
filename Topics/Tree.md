@@ -1,5 +1,5 @@
 # Tree
-**Timeline (Feb. 24 - )**
+**Timeline (Feb. 24 - Jun. 8)**
 1. How to traverse the tree? There are two general strategies to traverse a tree:
   * **Depth First Search (DFS)**
     * In this strategy, we adopt the **depth** as the priority, so that one would start from a root and reach all the way down to certain leaf, and then back to root to reach another branch. The DFS strategy can further be distinguished as **preorder**, **inorder**, and **postorder** depending on the relative order among the root node, left node and right node.
